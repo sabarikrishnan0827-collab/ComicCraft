@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ComicCraft - All 9 Project Documents</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e9ecef; margin: 0; padding: 20px; }
+        .doc-card { background: #fff; max-width: 850px; margin: 0 auto 30px auto; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .header { border-bottom: 2px solid #2b5797; padding-bottom: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        h1 { color: #2b5797; margin: 0; font-size: 20px; text-transform: uppercase; }
+        h2 { color: #1e395b; font-size: 15px; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 20px; }
+        p, li { font-size: 13px; color: #333; line-height: 1.6; }
+        ul { padding-left: 20px; }
+        .btn-dl { background: #28a745; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; }
+        .btn-dl:hover { background: #218838; }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .btn-dl { display: none; }
+            .doc-card { box-shadow: none; margin: 0; padding: 20px; page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 01_Project_Abstract -->
+    <div class="doc-card" id="doc1">
+        <div class="header">
+            <h1>01. Project Abstract</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <p><strong>Project Title:</strong> ComicCraft: AI Comic Story Creator using Gemini Models[span_0](start_span)[span_0](end_span)</p>
+        <p><strong>Program Track:</strong> Naan Mudhalvan - Generative AI Development</p>
+        <h2>Executive Summary</h2>
+        <p>ComicCraft is an interactive generative AI application designed to convert short user prompts into sequential 3-panel visual comic strips. By utilizing Google Gemini Models alongside dynamic diffusion image rendering, the system automates comic scripting, dialogue generation, and graphical scene construction within an intuitive web interface built on Streamlit[span_1](start_span)[span_1](end_span).</p>
+        <h2>Problem Statement</h2>
+        <p>Traditional comic creation demands extensive manual labor, visual art skills, and writing experience. ComicCraft provides an accessible, automated solution empowering content creators, educators, and students to generate sequential art within seconds[span_2](start_span)[span_2](end_span).</p>
+    </div>
+
+    <!-- 02_SRS -->
+    <div class="doc-card" id="doc2">
+        <div class="header">
+            <h1>02. Software Requirements Specification (SRS)</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>1. Functional Requirements</h2>
+        <ul>
+            <li><strong>FR-01:</strong> System accepts narrative topics and plot premises from the user interface[span_3](start_span)[span_3](end_span).</li>
+            <li><strong>FR-02:</strong> LLM integration interprets story inputs to generate 3 panel-wise visual descriptions and dialogues[span_4](start_span)[span_4](end_span).</li>
+            <li><strong>FR-03:</strong> Media generation engine synthesizes comic-style illustrations matching the generated scene visual cues[span_5](start_span)[span_5](end_span).</li>
+            <li><strong>FR-04:</strong> Built-in fallback architecture guarantees application stability during rate limit triggers[span_6](start_span)[span_6](end_span).</li>
+        </ul>
+        <h2>2. Non-Functional Requirements</h2>
+        <ul>
+            <li><strong>Performance:</strong> Full 3-panel story and image rendering completed in under 20 seconds.</li>
+            <li><strong>Usability:</strong> Responsive wide-screen dashboard layout with high visual contrast[span_7](start_span)[span_7](end_span).</li>
+            <li><strong>Reliability:</strong> Robust request timeouts and network retries for consistent image loading[span_8](start_span)[span_8](end_span).</li>
+        </ul>
+    </div>
+
+    <!-- 03_System_Design -->
+    <div class="doc-card" id="doc3">
+        <div class="header">
+            <h1>03. System Design & Architecture</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Architectural Overview</h2>
+        <p>The system follows a modular 3-tier architecture separating the Presentation Layer, Reasoning Engine, and Media Rendering Engine[span_9](start_span)[span_9](end_span):</p>
+        <ul>
+            <li><strong>Presentation Layer:</strong> Developed using Streamlit to offer responsive text inputs, progress spinners, and 3-column panel displays[span_10](start_span)[span_10](end_span).</li>
+            <li><strong>Reasoning Layer:</strong> Powered by the Google Gemini Generative AI SDK, parsing narrative instructions into structured panel breakdowns[span_11](start_span)[span_11](end_span).</li>
+            <li><strong>Media Layer:</strong> Pollinations AI REST integration executing text-to-image synthesis from sanitized visual descriptors[span_12](start_span)[span_12](end_span).</li>
+        </ul>
+    </div>
+
+    <!-- 04_Data_Flow_Workflow -->
+    <div class="doc-card" id="doc4">
+        <div class="header">
+            <h1>04. Data Flow & Workflow</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Sequential Processing Pipeline</h2>
+        <ol>
+            <li><strong>Input Ingestion:</strong> The user provides a comic topic into the Streamlit web front-end[span_13](start_span)[span_13](end_span).</li>
+            <li><strong>Prompt Construction:</strong> The system wraps the topic in strict structural formatting constraints[span_14](start_span)[span_14](end_span).</li>
+            <li><strong>LLM Inference:</strong> Gemini API processes the prompt and returns 3 distinct panel visual descriptions and dialogues[span_15](start_span)[span_15](end_span).</li>
+            <li><strong>Parsing & Extraction:</strong> Python parsing routines segment the text into distinct panel objects[span_16](start_span)[span_16](end_span).</li>
+            <li><strong>Graphic Generation:</strong> HTTP requests fetch 400x400 comic illustrations asynchronously[span_17](start_span)[span_17](end_span).</li>
+            <li><strong>Render Output:</strong> Images and dialogue boxes are mounted on the responsive 3-column layout[span_18](start_span)[span_18](end_span).</li>
+        </ol>
+    </div>
+
+    <!-- 05_UI_UX_Design -->
+    <div class="doc-card" id="doc5">
+        <div class="header">
+            <h1>05. UI / UX Design Specification</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Visual Interface Structure</h2>
+        <p>The user interface prioritizes clarity, minimal friction, and sequential storytelling presentation[span_19](start_span)[span_19](end_span):</p>
+        <ul>
+            <li><strong>Header & Control Zone:</strong> Branded header with clear instructional subtitles and a full-width topic input box[span_20](start_span)[span_20](end_span).</li>
+            <li><strong>Action Trigger:</strong> Prominent generation button initiating background asynchronous workers and visual loading spinners[span_21](start_span)[span_21](end_span).</li>
+            <li><strong>Story Display Zone:</strong> Three side-by-side equal columns containing panel numbering, generated comic art, and speech dialogue bubbles[span_22](start_span)[span_22](end_span).</li>
+        </ul>
+    </div>
+
+    <!-- 06_Test_Cases -->
+    <div class="doc-card" id="doc6">
+        <div class="header">
+            <h1>06. Test Cases & Verification</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Quality Assurance Results</h2>
+        <ul>
+            <li><strong>TC-01 (Standard Input):</strong> Input: 'A funny cat trying to catch a laser light' -> Successfully generated 3 panels with illustrations and text (PASS)[span_23](start_span)[span_23](end_span).</li>
+            <li><strong>TC-02 (Empty Submission):</strong> Input: '' -> Displayed interactive input warning (PASS)[span_24](start_span)[span_24](end_span).</li>
+            <li><strong>TC-03 (API Quota Handling):</strong> Simulated HTTP 429 quota exception -> Seamlessly transitioned to internal narrative fallback without crash (PASS)[span_25](start_span)[span_25](end_span)[span_26](start_span)[span_26](end_span).</li>
+            <li><strong>TC-04 (Network Resilience):</strong> Simulated packet delays during image download -> Handled gracefully with retry loops (PASS)[span_27](start_span)[span_27](end_span).</li>
+        </ul>
+    </div>
+
+    <!-- 07_Source_Code_Documentation -->
+    <div class="doc-card" id="doc7">
+        <div class="header">
+            <h1>07. Source Code Documentation</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Module Breakdown</h2>
+        <ul>
+            <li><strong>app.py:</strong> The primary orchestration script managing Streamlit life-cycles, user input capture, API handshakes, and visual component rendering[span_28](start_span)[span_28](end_span).</li>
+            <li><strong>generate_comic_story():</strong> Encapsulates LLM invocation, prompt instructions, output parsing, and automated fallback logic[span_29](start_span)[span_29](end_span).</li>
+            <li><strong>fetch_image():</strong> Manages HTTP GET requests to the image synthesis backend, featuring retry cycles and binary image conversion[span_30](start_span)[span_30](end_span).</li>
+            <li><strong>requirements.txt:</strong> Contains explicit project dependency pins: streamlit, google-generativeai, requests, pillow[span_31](start_span)[span_31](end_span).</li>
+        </ul>
+    </div>
+
+    <!-- 08_User_Manual -->
+    <div class="doc-card" id="doc8">
+        <div class="header">
+            <h1>08. User Manual & Deployment Guide</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Execution Instructions</h2>
+        <ol>
+            <li><strong>Environment Setup:</strong> Ensure Python 3.10+ is installed on the target machine[span_32](start_span)[span_32](end_span).</li>
+            <li><strong>Install Dependencies:</strong> Run <code>pip install -r requirements.txt</code> in the terminal[span_33](start_span)[span_33](end_span).</li>
+            <li><strong>Configure API Token:</strong> Insert your Google Gemini API key inside <code>app.py</code>[span_34](start_span)[span_34](end_span).</li>
+            <li><strong>Launch Server:</strong> Execute <code>streamlit run app.py</code>[span_35](start_span)[span_35](end_span).</li>
+            <li><strong>Access Platform:</strong> Navigate to <code>http://localhost:8501</code> in any web browser and generate comic strips[span_36](start_span)[span_36](end_span).</li>
+        </ol>
+    </div>
+
+    <!-- 09_Future_Scope_Conclusion -->
+    <div class="doc-card" id="doc9">
+        <div class="header">
+            <h1>09. Future Scope & Conclusion</h1>
+            <button class="btn-dl" onclick="window.print()">📥 Download as PDF</button>
+        </div>
+        <h2>Future Scope</h2>
+        <ul>
+            <li>Integration of character voice synthesis to read comic dialogues aloud dynamically.</li>
+            <li>Multi-language translation support targeting regional Indian languages via Gemini's multilingual capabilities.</li>
+            <li>Direct downloadable PDF export bundling the final comic strip for physical printing.</li>
+        </ul>
+        <h2>Conclusion</h2>
+        <p>ComicCraft successfully addresses sequential visual storytelling through the intelligent fusion of Large Language Models and diffusion image rendering[span_37](start_span)[span_37](end_span). The delivered system satisfies all assessment requirements established under the Naan Mudhalvan development curriculum[span_38](start_span)[span_38](end_span).</p>
+    </div>
+
+</body>
+</html>
